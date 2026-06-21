@@ -100,8 +100,7 @@ with k5:
 
 st.markdown(""); st.divider()
 
-tab1, tab2, tab3, tab4 = st.tabs(["📈 Revenue Trends", "📦 Categories & Products", "🚚 Delivery & Reviews", "💡 Business Insights"])
-
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📈 Revenue Trends", "📦 Categories & Products", "🚚 Delivery & Reviews", "💡 Business Insights", "📄 Business Memo"])
 # ════════════════════════════════════════════════════════════
 # TAB 1 — REVENUE TRENDS
 # ════════════════════════════════════════════════════════════
@@ -274,6 +273,62 @@ with tab4:
     2. **Audit office_furniture category** — investigate packaging and shipping processes given its low review score despite reasonable order volume.
     3. **Plan inventory around May peak** — ensure adequate stock of bed_bath_table and other top categories ahead of seasonal demand.
     4. **Promote credit card payment options** — it's the dominant payment method; ensure checkout flow is optimized for it.
+    """)
+
+# ════════════════════════════════════════════════════════════
+# TAB 5 — BUSINESS MEMO
+# ════════════════════════════════════════════════════════════
+with tab5:
+    st.markdown('<p class="section">Business Memo</p>', unsafe_allow_html=True)
+    st.markdown("""
+    **To:** Operations & Strategy Leadership  
+    **From:** Dilawar Mahar, Data Analyst  
+    **Re:** Key findings and recommendations from 2016–2018 sales data analysis
+
+    ---
+
+    ## Summary
+
+    An analysis of 96,426 delivered orders (R$19.8M in revenue) from the Olist marketplace reveals three structural issues limiting growth: a severe regional logistics gap, inconsistent product quality in specific categories, and a heavy revenue concentration in a single state.
+
+    ---
+
+    ## Key Findings
+
+    **1. Delivery speed is the strongest driver of customer satisfaction.**  
+    Orders delivered within 7 days average a 4.33/5 review score, while orders taking 22+ days average just 3.01/5 — a 1.3 point drop.
+
+    **2. Remote states are underserved and underperforming.**  
+    The 10 lowest-revenue states show average delivery times of 17–25 days, nearly double the fastest delivery bucket — very likely suppressing demand rather than reflecting genuinely lower interest.
+
+    **3. Revenue is heavily concentrated in São Paulo.**  
+    São Paulo alone generates more revenue than the next four highest states combined.
+
+    **4. office_furniture underperforms on quality.**  
+    Among categories with 100+ orders, office_furniture has the lowest average review score (3.52/5) — suggesting packaging, durability, or shipping damage issues.
+
+    **5. May is the peak revenue month.**  
+    Demand consistently peaks in May — useful for inventory and marketing planning.
+
+    **6. Data limitation.**  
+    Olist assigns a unique customer ID per order, making true repeat-purchase analysis impossible with this dataset alone.
+
+    ---
+
+    ## Recommendations
+
+    1. **Prioritize logistics investment in the 10 lowest-revenue states.** Reducing delivery time from 20+ days toward 14 days could improve both order volume and review scores.
+
+    2. **Audit the office_furniture supply chain.** Investigate packaging standards and carrier handling specifically for this category.
+
+    3. **Diversify regional marketing investment.** Reduce dependency on São Paulo by testing targeted promotions in mid-tier states (RJ, MG, RS).
+
+    4. **Plan inventory and staffing around the May peak.** Ensure adequate stock of top categories (bed_bath_table, health_beauty, computers_accessories) ahead of this period.
+
+    5. **Invest in proper customer-level tracking** to enable accurate repeat-purchase and lifetime-value analysis going forward.
+
+    ---
+    *Full methodology and interactive dashboard: [github.com/Dilawar777/ecommerce-sales-analytics](https://github.com/Dilawar777/ecommerce-sales-analytics)*
     """)
 
 st.divider()
